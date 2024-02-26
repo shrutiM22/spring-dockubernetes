@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-dock8s
+spec:
+  selector:
+    matchLabels:
+      app: spring-dock8s
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: spring-dock8s
+    spec:
+      containers:
+        - name: spring-dock8s
+          image: shrrutimehta/testdockapp1
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+
